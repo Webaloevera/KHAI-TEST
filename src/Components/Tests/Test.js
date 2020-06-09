@@ -51,16 +51,31 @@ class Test extends React.Component{
         if(this.props.loading){return <Loader />}
         if(this.props.auth==="admin@gmail.com"){
             return <div className="container" style={{marginTop:'3rem'}}>
-               <h3 style={{color:'#fff'}}>Список здавших тест по <span style={{color:'green'}}>{this.props.nameTest}</span></h3>
+               <h4 style={{color:'#fff'}}>Список здавших тест:<span style={{color:'green'}}>{this.props.nameTest}</span></h4>
                <hr></hr>
-               <ul>
+               <table>
+                <thead style={{color:'#fff'}}>
+                    <tr>
+                        <td>№</td>
+                        <td>Почта</td>
+                        <td>ФИО</td>
+                        <td>Группа</td>
+                        <td>Бал</td>
+                    </tr>
+                </thead>
+                <tbody>
                 {this.props.adminPanel.length>0 ? this.props.adminPanel
                 .map((e,i)=>{
-                  return <li key={i}>
-                        <h5>{i+1}. {e.student} Набрано баллов: {e.rating}</h5>
-                    </li>
-                }):<><h5 style={{color:'#fff'}}>{this.props.nameTest} пока не кто не здавал</h5></>}
-                </ul>
+                  return <tr key={i} style={{color:'#fff'}}>
+                        <td>{i+1}.</td>
+                        <td>{e.student.login}</td>
+                        <td>{e.student.fio}</td> 
+                        <td>{e.student.group}</td>
+                        <td>{e.rating}</td>
+                    </tr>
+                }):null}
+                </tbody>
+                </table>
                 
               
                 </div>

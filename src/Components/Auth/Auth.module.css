@@ -4,18 +4,17 @@
     padding-top: 100px;
     flex-grow: 1;
     width: 100%;
-    background: #34495E;
 }
 
 .Auth > div{
     width: 100%;
     max-width: 600px;
-    padding:0 20px;
+    padding:0 20xp;
 }
 
 .Auth h1{
     color:#fff;
-    font-size: 2rem;
+    font-size: 2.5rem;
     text-align:center;
 }
 .AuthForm{
